@@ -1,0 +1,22 @@
+{
+  "name" : "WikiCheck",
+  "description" : "Highlight any word to quickly view its Wikipedia entry",
+  "version" : "1.0.0",
+  "manifest_version" : 3,
+  "action" : {
+      "default_popup" : "index.html"
+  },
+  "icons" : {
+    "16" : "wikiLogo16.png",
+    "48" : "wikiLogo48.png",
+    "128" : "wikiLogo128.png"
+  },
+  "content_scripts" : [ {
+    "matches" : ["<all_urls>"],
+    "js" : ["content.js"]
+  } ],
+  "background" : {
+      "service_worker" : "wikiContext.js"
+  },
+  "permissions" : ["contextMenus", "storage"]
+}
